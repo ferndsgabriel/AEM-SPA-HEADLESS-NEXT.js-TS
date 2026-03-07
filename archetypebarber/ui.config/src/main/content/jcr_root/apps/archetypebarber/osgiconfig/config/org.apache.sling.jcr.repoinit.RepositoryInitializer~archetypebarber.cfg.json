@@ -1,0 +1,7 @@
+{
+    "scripts": [
+        "create path (sling:OrderedFolder) /content/dam/archetypebarber",
+        "create path (nt:unstructured) /content/dam/archetypebarber/jcr:content",
+        "set properties on /content/dam/archetypebarber/jcr:content\n  set cq:conf{String} to /conf/archetypebarber\n  set jcr:title{String} to \"Archetype Barber\"\nend"
+    ]
+}

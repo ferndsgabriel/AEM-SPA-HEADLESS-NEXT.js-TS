@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/archetypebarber/clientlibs"/>
+    <filter root="/apps/archetypebarber/components"/>
+    <filter root="/apps/archetypebarber/i18n"/>
+</workspaceFilter>

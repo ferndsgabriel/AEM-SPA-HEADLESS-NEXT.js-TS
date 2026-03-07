@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/archetypebarber" mode="merge"/>
+    <filter root="/content/archetypebarber" mode="merge"/>
+    <filter root="/content/dam/archetypebarber" mode="merge">
+        <exclude pattern="/content/dam/archetypebarber(/.*)?"/>
+        <include pattern="/content/dam/archetypebarber/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/archetypebarber/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/archetypebarber" mode="merge"/>
+</workspaceFilter>
