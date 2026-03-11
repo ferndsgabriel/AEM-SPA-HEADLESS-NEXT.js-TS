@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+        xmlns:cq="http://www.day.com/jcr/cq/1.0"
+        xmlns:jcr="http://www.jcp.org/jcr/1.0"
+        xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Border"
+        sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                    maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    
+                    <!-- BORDER SETTINGS TAB -->
+                    <border
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Border Settings"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                    margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+
+                                            <!-- HEIGHT (espessura da borda) -->
+                                            <height
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                    fieldLabel="Border Height"
+                                                    fieldDescription="Thickness of the border in pixels"
+                                                    name="./height"
+                                                    min="{Long}0"
+                                                    max="{Long}20"
+                                                    step="{Long}1"
+                                                    value="{Long}1"/>
+
+                                            <!-- WIDTH (comprimento da borda) -->
+                                            <width
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                    fieldLabel="Border Width"
+                                                    fieldDescription="Length of the border in pixels"
+                                                    name="./width"
+                                                    min="{Long}0"
+                                                    max="{Long}500"
+                                                    step="{Long}10"
+                                                    value="{Long}100"/>
+
+                                            <!-- COLOR -->
+                                            <color
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                    fieldLabel="Border Color"
+                                                    fieldDescription="Select border color"
+                                                    name="./color"
+                                                    emptyText="#000000"
+                                                    showProperties="{Boolean}true"
+                                                    showDefaultColors="{Boolean}true"
+                                                    showSwatches="{Boolean}true"/>
+
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </border>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

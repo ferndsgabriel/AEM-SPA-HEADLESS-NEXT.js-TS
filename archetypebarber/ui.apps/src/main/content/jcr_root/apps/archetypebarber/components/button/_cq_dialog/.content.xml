@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Button"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                    maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    
+                    <!-- BUTTON SETTINGS TAB -->
+                    <button
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Button Settings"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                    margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+
+                                            <!-- BUTTON TEXT -->
+                                            <buttonText
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldLabel="Button Text"
+                                                    fieldDescription="Text displayed on the button"
+                                                    name="./buttonText"
+                                                    required="{Boolean}true"/>
+
+                                            <!-- BUTTON LINK -->
+                                            <buttonLink
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                                    fieldLabel="Button Link"
+                                                    fieldDescription="Link URL for the button"
+                                                    name="./buttonLink"
+                                                    rootPath="/content"/>
+
+                                            <!-- COLOR -->
+                                            <color
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                    fieldLabel="Button Color"
+                                                    fieldDescription="Background color of the button"
+                                                    name="./color"
+                                                    emptyText="#000000"
+                                                    showProperties="{Boolean}true"
+                                                    showDefaultColors="{Boolean}true"
+                                                    showSwatches="{Boolean}true"/>
+
+                                            <!-- PADDING VERTICAL -->
+                                            <paddingVertical
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                    fieldLabel="Padding Vertical"
+                                                    fieldDescription="Vertical padding in pixels"
+                                                    name="./paddingVertical"
+                                                    min="{Long}0"
+                                                    max="{Long}50"
+                                                    step="{Long}2"
+                                                    value="{Long}8"/>
+
+                                            <!-- PADDING HORIZONTAL -->
+                                            <paddingHorizontal
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                    fieldLabel="Padding Horizontal"
+                                                    fieldDescription="Horizontal padding in pixels"
+                                                    name="./paddingHorizontal"
+                                                    min="{Long}0"
+                                                    max="{Long}100"
+                                                    step="{Long}4"
+                                                    value="{Long}16"/>
+
+                                            <!-- FONT SIZE -->
+                                            <fontSize
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                    fieldLabel="Font Size"
+                                                    fieldDescription="Font size in pixels"
+                                                    name="./fontSize"
+                                                    min="{Long}8"
+                                                    max="{Long}72"
+                                                    step="{Long}2"
+                                                    value="{Long}14"/>
+
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </button>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

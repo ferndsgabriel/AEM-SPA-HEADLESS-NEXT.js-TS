@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+        xmlns:cq="http://www.day.com/jcr/cq/1.0"
+        xmlns:jcr="http://www.jcp.org/jcr/1.0"
+        xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Description"
+        sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                    maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    
+                    <!-- DESCRIPTION TAB -->
+                    <description
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Description Settings"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                    margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+
+                                            <!-- DESCRIPTION TEXT (TEXTAREA for longer content) -->
+                                            <text
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                                    fieldLabel="Description Text"
+                                                    fieldDescription="Enter the description text"
+                                                    name="./text"
+                                                    required="{Boolean}true"
+                                                    rows="{Long}5"/>
+
+                                            <!-- DESCRIPTION TYPE -->
+                                            <type
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                    fieldLabel="Element Type"
+                                                    fieldDescription="Select the HTML element"
+                                                    name="./type">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <p
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Paragraph (P)"
+                                                            value="p"/>
+                                                    <span
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Span (SPAN)"
+                                                            value="span"/>
+                                                    <div
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Div (DIV)"
+                                                            value="div"/>
+                                                    <blockquote
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Blockquote"
+                                                            value="blockquote"/>
+                                                    <pre
+                                                            jcr:primaryType="nt:unstructured"
+                                                            text="Preformatted (PRE)"
+                                                            value="pre"/>
+                                                </items>
+                                            </type>
+
+                                            <!-- COLOR -->
+                                            <color
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                                                    fieldLabel="Color"
+                                                    fieldDescription="Select text color"
+                                                    name="./color"
+                                                    emptyText="#000000"
+                                                    showProperties="{Boolean}true"
+                                                    showDefaultColors="{Boolean}true"
+                                                    showSwatches="{Boolean}true"/>
+
+                                            <!-- SIZE -->
+                                            <size
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                                    fieldLabel="Font Size"
+                                                    fieldDescription="Font size in pixels"
+                                                    name="./size"
+                                                    min="{Long}8"
+                                                    max="{Long}72"
+                                                    step="{Long}2"
+                                                    value="{Long}16"/>
+
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </description>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

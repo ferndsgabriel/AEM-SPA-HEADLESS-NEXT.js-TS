@@ -24,3 +24,22 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+
+.aem-GridColumn .aem-GridColumn--default--12{
+  width: 100%;
+}
+
+.aem-container {
+  width: 100%;
+}
+
+.is-in-editor{
+  border: 1px dashed #999;
+  padding: 8px;
+}
+
+.reset-container-aem .aem-container{
+  width: 100%;
+}

@@ -1,15 +1,10 @@
-// pages/[[...page]].tsx
 import { GetServerSideProps } from "next";
 import Head from 'next/head';
 import { fetchModel } from '@adobe/aem-react-editable-components';
 import getPages from "@/lib/getPages";
-import dynamic from 'next/dynamic'; // 👈 Importar dynamic
-import { QueryClient } from "@/lib/query";
+import { AEMResponsiveGrid } from "@/components/AEMResponsiveGrid";
 
-const AEMResponsiveGrid = dynamic(
-  () => import('@adobe/aem-react-editable-components').then(mod => mod.ResponsiveGrid),
-  { ssr: false } 
-) as any;
+
 
 type PageProps = {
   model: Record<string, any>;
@@ -18,22 +13,29 @@ type PageProps = {
   startImage: any;
 };
 
-const { NEXT_PUBLIC_AEM_HOST, NEXT_PUBLIC_AEM_ROOT } = process.env;
+
+
+const { NEXT_PUBLIC_AEM_HOST, NEXT_PUBLIC_AEM_ROOT }  = process.env;
+
 
 export default function Home({ model, pagePath, pages, startImage }: PageProps) {
-
-  console.log('Start Image URL:', startImage);
-
+  
   return (
     <main>
       <Head>
         <title>{model?.title || 'Home'}</title>
       </Head>
-      <section style={{backgroundImage:`url(${startImage})`}} 
+      
+      <section style={{
+      backgroundImage:`url(${startImage})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    }} 
+
       className="bg-neutral-600 min-h-screen relative">
         <div className="w-full h-full bg-black/80 absolute top-0 left-0 flex items-center justify-center">
-          <div className="w-full max-w-4xl flex flex-col gap-8"> 
-            <AEMResponsiveGrid  suppressHydrationWarning clas
+          <div className="w-full max-w-4xl reset-container"> 
+            <AEMResponsiveGrid  suppressHydrationWarning
               key={pagePath}
               model={model}
               pagePath={pagePath}
@@ -65,10 +67,13 @@ export const getServerSideProps: GetServerSideProps<PageProps> = async (context)
     },
   });
 
-const client = QueryClient.fromEnv();
+/*const client = QueryClient.fromEnv();
 const res = await client.getAllStartImage();
 const startImage = res.data.startImageList.items[0]?.startimageurl || 'No image found';
+*/
 
+
+const startImage = `${NEXT_PUBLIC_AEM_HOST}/content/dam/images/startimage.jpg`;
 
   return {
     props: {

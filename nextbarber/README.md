@@ -116,6 +116,14 @@ Na pasta `pages`:
 
 Se tudo estiver configurado corretamente, o SPA já estará funcionando.
 
+
+Usando assets para obter aquivos, no seu author, vá em assets > files > e faça o upload do seu arquivo, ou crie uma pasta para organização, no meu caso irei criar uma pasta de imagens
+
+para acessar o arquivos basta passar o caminho
+ex: http://localhost:4502/content/dam/images/startimage.jpg
+const startImage = `${NEXT_PUBLIC_AEM_HOST}/content/dam/images/startimage.jpg`;
+
+
 ## 10. Configurando Headless
 
 ### Ativar GraphQL Persisted Queries
